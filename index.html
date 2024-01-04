@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloyd MaslogA - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lightbox.min.css">
+    <!-- Place this script inside the head or before the closing body tag -->
+    <script>
+        window.onscroll = function() { stickyNavigation() };
+
+        function stickyNavigation() {
+            var header = document.getElementById("header");
+            var navbar = document.getElementById("navbar");
+            var sticky = header.offsetTop;
+
+            if (window.pageYOffset > sticky) {
+                navbar.classList.add("sticky");
+                header.style.marginBottom = navbar.offsetHeight + 'px';
+            } else {
+                navbar.classList.remove("sticky");
+                header.style.marginBottom = '0';
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <h1>Cloyd Maslog</h1>
+            <p>Custom Keyboard Builder</p>
+        </div>
+    </header>
+
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="contact.html">Contact Me!</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="section section-offset">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="indented-paragraph">Hi there! I'm Cloyd Maslog, a custom keyboard builder. As a custom keyboard builder, I immerse myself in the intricate world of switches, keycaps, and layouts. So, my journey down the rabbit hole of custom mechanical keyboards all started with the addictive beats of osu! As I got more into the game, I realized how crucial a killer keyboard setup is. That's when I fell deep into the rabbit hole of mechanical keyboards – you know, switches, keycaps, all that jazz.</p>
+            
+            <p class="indented-paragraph">Driven by the need for a gaming setup that felt uniquely mine, I decided to dive into building my own custom keyboards. Armed with soldering tools and a bunch of switches, I started putting together keyboards that not only amped up my osu! game but also looked and felt exactly how I wanted. From osu! addict to a DIY keyboard geek, it's been a wild ride, all fueled by my obsession with getting the perfect combo of gaming awesomeness and killer keyboard aesthetics. Come along for the ride as I keep exploring the sweet spot between rhythm gaming and the art of crafting custom keyboards – there's a whole world of cool stuff and satisfaction waiting! 🎮⌨️</p>
+        </div>
+    </section>
+
+    <section id="projects" class="section section-offset">
+        <div class="container">
+            <h2>Keyboard Projects</h2>
+            <div class="project">
+                <h3>MK68 Keyboard</h3>
+                <a href="MK68KB.jpg" data-lightbox="projects" data-title="MK68 Keyboard">
+                    <img src="MK68KB.jpg" alt="Project 1 Image" class="project-image">
+                </a>
+                <p>Components:</p>
+                <p>-Kit: MK68 Mechanical Keyboard Kit RGB</p>
+                <p>-Switches: Gateron Milky Yellow Pro (Linear) Lube w/ Krytox 205g0</p>
+                <p>-Keycaps: GMK Mictlan</p>
+            </div>
+            <div class="project">
+                <h3>Rebel60 Keyboard</h3>
+                <a href="Rebel60KB.jpg" data-lightbox="projects" data-title="Rebel60 Keyboard">
+                    <img src="Rebel60KB.jpg" alt="Project 2 Image" class="project-image">
+                </a>
+                <p>Components:</p>
+                <p>-Kit: Rebel60 Underglow RGB Kit</p>
+                <p>-Switches: Gateron Milky Yellow Pro (Linear) Lube w/ Krytox 205g0</p>
+                <p>-Keycaps: GMK Honor</p>
+                <p>-PCB: CX60 PCB</p>
+                <p>-Stabilizers: Durock Screw-in V2 Stabilizers Smokey ver. Lube w/ Krytox 205g0</p>
+            </div>
+            <div class="project">
+                <h3>Cheap60 Keyboard with DZ60 V2 Flex Cut PCB</h3>
+                <a href="Cheap60KB.jpg" data-lightbox="projects" data-title="Cheap60 Keyboard with DZ60 V2 Flex Cut PCB">
+                    <img src="Cheap60KB.jpg" alt="Project 3 Image" class="project-image">
+                </a>
+                <p>Components:</p>
+                <p>-Kit: Cheap60 Case Only Kit</p>
+                <p>-Switches: KTT Peach & Sea Salt Lemon (Linear) Lube w/ Krytox 205g0</p>
+                <p>-Keycaps: GMK WoB</p>
+                <p>-PCB: DZ60 V2 Flex Cut PCB</p>
+                <p>-Stabilizers: TX Stabilizers (Rev. 3) Lube w/ XHT-BDZ</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-media">
+                <a href="https://github.com/maslog1412" target="_blank"><img src="github-icon.png" alt="GitHub"></a>
+            </div>
+
+            <div class="contact-info">
+                <p>Email: cloydmaslog@gmail.com</p>
+            </div>
+
+            <div class="back-to-top">
+                <a href="index.html">Back to Top</a>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Cloyd Maslog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="lightbox-plus-jquery.min.js"></script>
+    <script>
+        lightbox.option({
+        'alwaysShowNavOnTouchDevices': true,
+        'wrapAround': true,
+        'disableScrolling': true,
+        'positionFromTop': 50
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            if (lightbox.getState().isOpen) {
+                return;
+            }
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>
